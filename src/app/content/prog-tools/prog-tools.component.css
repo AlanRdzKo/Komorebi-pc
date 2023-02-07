@@ -1,0 +1,119 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+.main{
+    background-color: #E8E8E8;
+    border-radius: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+#appbox
+{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: White;
+    width: 250.5px;
+    height: auto;
+}
+
+#appbox-photo{
+    margin-top: 20px;
+    width: 120px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#stacker{
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+/* -- BUTTON STYLES --- */
+#btn-style-purple{
+    padding: 5px;
+    padding-left: 9px;
+    padding-right: 9px;
+    color: white;
+    border-radius: 5px;
+    transition: 0.25s;
+    background-color: rgb(108, 0, 250);
+    border-color: rgb(108, 0, 250);
+}
+
+#btn-style-purple:hover{
+    border-radius: 5px;
+    transition: 0.25s;
+    background-color: rgb(54, 0, 126);
+    border-color: rgb(54, 0, 126);
+}
+
+#btn-style-red{
+    padding: 5px;
+    padding-left: 9px;
+    padding-right: 9px;
+    color: white;
+    border-radius: 5px;
+    transition: 0.25s;
+    background-color: rgb(236, 0, 0);
+    border-color: rgb(236, 0, 0);
+}
+
+#btn-style-red:hover{
+    border-radius: 5px;
+    transition: 0.25s;
+    background-color: rgb(150, 2, 2);
+    border-color: rgb(150, 2, 2);
+}
+
+#btn-link{
+    color: white;
+    text-decoration: none;
+}
+.btn-add{
+    margin-top: 15px;
+}
+.main button {
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+/* --- MODAL STYLES ---- */
+.modaltext{
+    margin-top: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: center;
+}
+
+.modal-body > form > input, textarea{
+    width: 100%;
+}
+
+.modal-body > form >textarea{
+    resize: none;
+    height: 120px;
+}
+
+.modal-title{
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+#c-text{
+    margin: 0px;
+    text-align: center;
+}
+.modaltext{
+    margin-top: 15px;
+    font-size: 18px;
+}

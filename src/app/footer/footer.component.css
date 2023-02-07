@@ -1,0 +1,43 @@
+*{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+hr{
+    align-self: right;
+    width: 25%;
+}
+.Main{
+    padding-top: 40px;
+    width: 100%;
+    background-color: #171717;
+    padding-bottom: 50px;
+}
+
+/* -- LI ROUTER-- */
+#Routers{
+    text-align: center;
+}
+
+#Routers li {
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#li2{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+#Routers li:hover{
+    color: grey;
+    transition: 0.5s;
+}
+/* -- LI ROUTER-- */
+
+#downtxt p {
+    text-align: center;
+    margin: 0px;
+}

@@ -1,0 +1,39 @@
+*{
+    margin: 0 auto;
+    border-radius: 12.5px;
+}
+
+.Main{
+    padding: 30px;
+    background-color: white;
+}
+.Container{
+    padding: 10px;
+    border-color: #ECECEC;
+    border-style: solid;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+#hrLine{
+    margin-bottom: 10px;
+}
+
+/* -- TEXT -- */
+
+#text, #title-text{
+    font-family: 'Raleway', sans-serif;
+}
+
+#title-text{
+    padding-bottom: 7.5px;
+}
+#li-dots{
+    margin-top: 10px;
+}
+
+.p-text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* -- END -- */

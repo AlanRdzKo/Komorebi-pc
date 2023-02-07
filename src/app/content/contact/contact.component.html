@@ -1,0 +1,42 @@
+<div class="Main">
+    <button type="button" id="ModalButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="agregar()">
+        Nuevo
+    </button>
+    <br>
+    <div class="ContentContact">
+        <div  *ngFor="let registro of registros" class="boxes">
+            <p id="BoxTitle">{{registro.title}}</p>
+            <p id="BoxText" [innerHTML]="saltoDeLinea(registro.text)">{{registro.text}}</p>
+            <a [routerLink]="" (click)="editar(registro)" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</a>
+            <a (click)="eliminar(registro)">Delete</a>
+        </div>
+    </div>
+    <div class="ContentImage">
+        <img src="http://eos.com.ec/wp-content/uploads/2020/02/588526fb6f293bbfae451a3a.png">
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" *ngIf="proceso_agregar">Nuevo</h5>
+          <h5 class="modal-title" id="exampleModalLabel" *ngIf="proceso_editar">Editar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <label class="modaltext">Estaras agregando un nuevo tema al contacto del sitio web.</label>
+        <div class="modal-body">
+          <form>
+              <label><b>Titulo: </b></label><br>
+              <input type="text" [(ngModel)]="form.title" name="title"><br>
+              <label><b>Asunto:</b></label><br>
+              <textarea [(ngModel)]="form.text" name="text"></textarea><br>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="send_contact()" data-bs-dismiss="modal" *ngIf="proceso_agregar">Enviar</button>
+          <button type="button" class="btn btn-primary" (click)="actualizar_contact()" data-bs-dismiss="modal" *ngIf="proceso_editar">Editar</button>
+        </div>
+      </div>
+    </div>
+  </div>

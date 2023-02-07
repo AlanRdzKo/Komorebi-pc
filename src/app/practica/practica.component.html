@@ -1,0 +1,26 @@
+<div class="Main">
+    <b>Ejercicio 1: </b> {{texto}} <br>
+    <b>Ejercicio 2: </b> {{nombre}} {{apellido}} <br>
+    <b>Ejercicio 2a: </b> {{nomcomp}} <br>
+    <b>Ejercicio 3: </b> <b>N1: </b> {{num1}} <b>N2: </b> {{num2}} <b>Suma: </b> {{suma}} <br>
+    <b>Ejercicio 4: </b> <b>N1: </b> {{num1}} <b>N2: </b> {{num2}} <b>Multiplicacion: </b> {{mult}} <br>
+    <b>Ejercicio 5: </b> 
+    <input type="text" [(ngModel)]="nombreAlumno">
+    <button (click)="agregar()">agregar</button>
+    <button (click)="recorrer()">Recorrer</button><br>
+    <b>Ejercicio 6:</b><br>
+    <input type="radio" [(ngModel)]="genero" checked="true" value="Mujer"> Mujer
+    <input type="radio" [(ngModel)]="genero" value="Hombre"> Hombre
+    <button (click)="Comparar()">Obtener</button><br>
+    <b>Ejercicio 7:</b><br>
+    <input type="text" [(ngModel)]="Calif">
+    <button (click)="Obt_Calif()">Calificar</button><br>
+    <b>Ejercicio 8:</b><br>
+    <b>Num1: </b><input type="number" [(ngModel)]="Nume1"><br>
+    <b>Num2: </b><input type="number" [(ngModel)]="Nume2"><br>
+    <input type="radio" [(ngModel)]="Op" checked="true" value="multi"> Multiplicacion <br>
+    <input type="radio" [(ngModel)]="Op" value="suma"> Suma <br>
+    <input type="radio" [(ngModel)]="Op" value="resta"> Resta <br>
+    <input type="radio" [(ngModel)]="Op" value="dividir"> Division<br>
+    <button (click)="Operacion()">Resolver</button>
+</div>

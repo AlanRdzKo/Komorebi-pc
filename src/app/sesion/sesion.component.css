@@ -1,0 +1,52 @@
+*{
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+}
+
+hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 250px;
+}
+.container{
+    width: 50%;
+    background-color: white;
+    text-align: center;
+    border-radius: 12.5px;
+    padding-bottom: 50px;
+}
+
+@media not screen and (min-width:1180px){ /* When width <= than 1180px */
+    .container{
+        width: 100%;
+    }
+}
+
+.controls{
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+#photo
+{
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+#info-text{
+    width: 400px;
+
+}
+
+form a p{
+    margin-top: 8px;
+    margin-bottom: 16px;
+}

@@ -1,0 +1,45 @@
+<div class="container">
+    <button type="button" id="ModalButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="agregar()">
+        Agregar formulario
+    </button>
+    <div *ngFor="let registro of registros">
+        <img src="{{registro.url}}" class="Photo">
+        <p id="add-name-title">{{registro.nombre}}</p>
+        <div class="desc">
+            <p id="add-desc-text">{{registro.descripcion}}</p>
+        </div>
+        <button class="btn-ext" (click)="editar(registro)" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
+        <button class="btn-ext" (click)="eliminar(registro)">Eliminar</button>
+    </div>
+</div>
+<!-- Inicio Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" *ngIf="proceso_agregar">Agregar información</h5>
+          <h5 class="modal-title" id="exampleModalLabel" *ngIf="proceso_editar">Editar información</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <label class="modaltext">Por favor, especificanos que tipo de error o problema has encontrado recientementa, asi nosotros podemos solucionarlo.</label>
+        <div class="modal-body">
+          <form>
+              <label><b>Usuario: </b></label><br>
+              <input type="text" [(ngModel)]="form.nombre" name="nombre"><br>
+              <label><b>Descripción: </b></label><br>
+              <textarea [(ngModel)]="form.descripcion" name="descripcion"></textarea><br>
+              <input type="file" accept="image/*" (change)="PicStorage($event)">
+              <hr><br>
+                <img id="modalphoto" src="{{url}}" *ngIf="proceso_editar"><br>
+                <p id="c-text">¡Verifica que la información sea correcta!</p>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="send_about()" data-bs-dismiss="modal" *ngIf="proceso_agregar">Enviar</button>
+          <button type="button" class="btn btn-primary" (click)="actualizarInfo()" data-bs-dismiss="modal" *ngIf="proceso_editar">Editar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Final Modal -->

@@ -1,0 +1,115 @@
+*{
+    z-index: 10;
+}
+.SideMenu{
+    margin-top: -25px;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    transition: all 0.5s;
+}
+
+#Sidebar{
+    background-color: #1E1E1E;
+    width: 300px;
+    height: 87.5%;
+    box-shadow: inset 0px -25px 20px -10px #0e0e0e; 
+}
+
+#ImageLogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    /* Size */
+    width: 65%;
+    height: auto;
+    /* Size */
+}
+.nav button{
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+.nav-item-buttons{
+    padding-top: 4%;
+    padding-bottom: 5%;
+    background-color: transparent;
+    border-color: transparent;
+    display: block;
+    width: 300px;
+}
+
+.nav-item-buttons:hover{
+    color: darkgrey;
+    background-color: #171717;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.nav a{
+    text-decoration: none;
+}
+#Footer-Sidebar{
+    margin: 0 auto;
+    height: 12.5%;
+    padding-top: 10px;
+    padding-bottom: 500px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    color: white;
+    background-color: #171717; 
+}
+
+.fab{
+    color: white;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    font-size: 40px;
+}
+
+.fab:hover{
+    color: darkgrey;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+/* Opening and Closing Side-Menu */
+#OpenMenu{
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    position: absolute;
+    padding: 10px;
+    background-color:#111111;
+    margin-left: 300px;
+    margin-top: 150%;
+    transition: 0.5s;
+}
+
+@media not screen and (min-width:500px){ /* When width <= than 500px */
+    #OpenMenu:hover{
+        color: #A7A7A7;
+        transition: 0.6s;
+    }
+    #OpenMenu{
+        margin-top: 142.5%;
+        transition: 0.5s;
+    }
+}
+@media only screen and (min-width:501px){ /* When width => than 501px */
+    #OpenMenu:hover{
+        color: #A7A7A7;
+        transition: 0.6s;
+    }
+}
+#check{
+    display: none;
+}
+#check:checked ~ .SideMenu{
+    left: 0;
+}
+
+/* End OCSM */

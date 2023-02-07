@@ -1,0 +1,43 @@
+*{
+    margin: 0 auto;
+}
+
+.content{
+    margin-top: 15px;
+}
+
+.Main{
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#firebase-second-carousel{
+    display: inline;
+    margin: 0px;
+    padding: 0%;
+    background-color: black;
+}
+#AdviceTitle{
+    font-family: 'Raleway', 'sans-serif';
+    font-size: 28px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    font-weight: bold;
+}
+
+.main-content owl-carousel div img{
+    border-radius: 15px;
+}
+.main-content owl-carousel div {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.photos owl-carousel div img{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}

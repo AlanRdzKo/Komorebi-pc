@@ -1,0 +1,45 @@
+<div class="main">
+    <div id="stacker" *ngFor="let registro of registros">
+        <form id="appbox">
+          <img src="{{registro.url}}" id="appbox-photo"><br>
+          <label id="appbox_titles"><b>Nombre:</b></label><br>
+          <p id="appbox_text">{{registro.nombre}}</p>
+          <label id="appbox_titles"><b>Descripcion:</b></label><br>
+          <p id="appbox_text">{{registro.desc}}</p>
+          <button id="btn-style-purple" class="appbox_button"><a id="btn-link" href="{{registro.web}}" target="_blank">Descubrir</a></button>
+          <button id="btn-style-red" (click)="eliminar(registro)">Eliminar</button>
+        </form>        
+    </div>
+    <br>
+    <button  id="btn-style-purple" class="btn-add" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="agregar()">Agregar</button>
+</div>
+<!-- Inicio Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar información</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <label class="modaltext">¿Que programa desea agregar?</label>
+        <div class="modal-body">
+          <form>
+            <input type="file" accept="image/*" (change)="PicStorage($event)"><br><br>
+            <label><b>Nombre: </b></label><br>  
+            <input type="text" [(ngModel)]="form.nombre" name="nombre"><br>
+            <label><b>Descripción: </b></label><br>
+            <textarea [(ngModel)]="form.desc" name="descripcion" maxlength="30"></textarea><br>
+            <label><b>URL: </b></label><br>
+            <textarea [(ngModel)]="form.web" name="web"></textarea><br>
+              <hr>
+                <p id="c-text">¡Verifica que la información sea correcta!</p>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="btn-style-purple" (click)="send_program()" data-bs-dismiss="modal">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Final Modal -->

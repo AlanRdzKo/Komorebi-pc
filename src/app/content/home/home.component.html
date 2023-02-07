@@ -1,0 +1,24 @@
+<div class="Main">
+    <div class="photos">
+        <owl-carousel [options]="SlideMain" [carouselClasses]="['owl-theme']">
+            <div *ngFor="let Imagen of img">
+                <img src="{{Imagen}}">
+            </div>
+        </owl-carousel>
+    </div>
+    <div class="main-content">
+        <!-- Advice owl carousel -->
+        <p id="AdviceTitle">Consejos utiles</p>
+        <div>
+            <owl-carousel [options]= "slideOptions" [carouselClasses]="['owl-theme']">
+                <div *ngFor="let Imagen of OwlURLS">
+                    <img src="{{Imagen}}">
+                </div>
+            </owl-carousel>
+        </div>
+        <!-- Advice owl carousel -->
+        <div class="content">
+
+        </div>
+    </div>
+</div>
