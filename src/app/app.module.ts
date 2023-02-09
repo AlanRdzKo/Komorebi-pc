@@ -26,6 +26,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { CrudService } from './services/crud.service';
 import { ProgToolsComponent } from './content/prog-tools/prog-tools.component';
+import { ForumComponent } from './content/forum/forum.component';
 
 const appRoutes: Routes =[
   {path:'', component: HomeComponent},
@@ -37,7 +38,8 @@ const appRoutes: Routes =[
   {path: 'sesion', component: SesionComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'practica', component: PracticaComponent},
-  {path: 'prog-tools', component: ProgToolsComponent}
+  {path: 'prog-tools', component: ProgToolsComponent},
+  {path: 'forum', component: ForumComponent}
 ]
 
 @NgModule({
@@ -55,7 +57,8 @@ const appRoutes: Routes =[
     SesionComponent,
     RegisterComponent,
     PracticaComponent,
-    ProgToolsComponent
+    ProgToolsComponent,
+    ForumComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { identifierName } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/compat/firestore';
 import {AngularFireStorage} from '@angular/fire/compat/storage';
@@ -10,6 +11,7 @@ export class CrudService {
 
   url:any
   registros:any
+  id: any
 
   constructor(private database: AngularFirestore, private storage: AngularFireStorage) { }
 
@@ -20,9 +22,9 @@ export class CrudService {
         let id=response.id;
         resolve(id)
        this.database.collection(coleccion).doc(id).update({
-         url:this.url,
-         id:id
+        url:this.url
        })
+       console.log(id)
       }).catch((err)=>{reject(false)})
     })
     return promesa
@@ -65,9 +67,10 @@ export class CrudService {
     let promesa = new Promise((resolve, reject)=>{
       this.database.collection(coleccion).doc(registro.id).set(registro).then(resp=>{
         resolve(true)
-        if(this.url){
+        if(this.url == "" || this.url != ""){
           this.database.collection(coleccion).doc(registro.id).update({
-            url:this.url
+            url:this.url,
+            id: registro.id
           })
         }
       }).catch((err)=>{

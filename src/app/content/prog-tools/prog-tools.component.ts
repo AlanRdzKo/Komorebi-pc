@@ -1,5 +1,6 @@
 import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { url } from 'inspector';
 import { CrudService } from 'src/app/services/crud.service';
 
 
@@ -13,7 +14,8 @@ export class ProgToolsComponent implements OnInit {
     nombre: "",
     desc:"",
     web:"",
-    url:""
+    url:"",
+    id: ""
   }
   coleccion: string
   website: any
@@ -24,6 +26,7 @@ export class ProgToolsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.form.url = ""
     this.coleccion = 'ProgramingTools'
     this.crud.read(this.coleccion).then((response: any)=>{
       this.registros = response;
@@ -36,7 +39,8 @@ export class ProgToolsComponent implements OnInit {
       nombre: "",
       desc: "",
       web: "",
-      url: ""
+      url: "",
+      id: ""
     }
   }
 
@@ -57,7 +61,7 @@ export class ProgToolsComponent implements OnInit {
     }
   }
 
-  send_program(): void
+  create(): void
   {
   this.coleccion = 'ProgramingTools'
   this.crud.create(this.coleccion,this.form).then((Response:any)=>{
