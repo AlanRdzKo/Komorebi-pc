@@ -5,10 +5,10 @@
     margin-right: 40px;
     margin-top: 45px;
     margin-bottom: 45px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
-
 .dm-tbl{
-    display: inline-block;
     margin-top: 15px;
     margin-left: 15px;
     margin-bottom: 15px;
@@ -16,7 +16,6 @@
     padding: 10px;
     border-radius: 15px;
     background-color: White;
-    
     height: auto;
 }
 
@@ -28,6 +27,13 @@
     margin-left: 100px;
 }
 /* -- BUTTON STYLES --- */
+
+#frm-add-topic{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
 #btn-style-purple{
     padding: 5px;
     padding-left: 9px;
@@ -67,4 +73,36 @@
 #btn-link{
     color: white;
     text-decoration: none;
+}
+
+/* --- MODAL STYLES ---- */
+.modaltext{
+    margin-top: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: center;
+}
+
+.modal-body > form > input, textarea{
+    width: 100%;
+}
+
+.modal-body > form >textarea{
+    resize: none;
+    height: 120px;
+}
+
+.modal-title{
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+#c-text{
+    margin: 0px;
+    text-align: center;
+}
+.modaltext{
+    margin-top: 15px;
+    font-size: 18px;
 }

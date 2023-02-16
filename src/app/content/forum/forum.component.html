@@ -1,19 +1,60 @@
 <div class="main">
-    <div class="dm-tbl">
-        <h3>Sample Title</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor alias adipisci a voluptatem ullam. Veritatis optio praesentium, culpa, mollitia quasi assumenda quibusdam, libero voluptate eligendi quos tempora eius quia labore!</p>
-        <div class="dm-tbl-btns">
-            <button class="frm-btn-response" id="btn-style-purple">Responder</button>
-            <button class="frm-btn-response" id="btn-style-red">Eliminar</button>
-        </div>
-        <hr>
-        <div class="frm-tbl-rsp">
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae iste, quae laboriosam soluta ex reiciendis dignissimos sint voluptas! Dolorem repudiandae magnam adipisci aut, dolor ut voluptas doloremque iure quis cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quam ab natus odio asperiores, quos sed, porro laborum animi, exercitationem fuga! Dicta, sequi debitis! Iusto maxime temporibus labore accusamus asperiores?
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui unde, necessitatibus repellat ut non doloribus enim eius magni. Quos facilis rerum illum minus nesciunt modi quam voluptatum, illo nihil qui.
-            </p>
-            <p><b>Respondido por: NaNKo</b></p>
-            <button class="frm-btn-response" id="btn-style-red">Eliminar</button>
+    <div id="frm-add-topic">
+        <button class="frm-btn-response" id="btn-style-purple" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="agregar()" (click)="agregar()">Responder</button>
+    </div>
+    <div class="dm-tbl" *ngFor="let registro of registros">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h4 class="accordion-header" id="headingOne">{{registro.title}}</h4>
+                </button>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>{{registro.desc}}</p>
+                        <div class="dm-tbl-btns">
+                            <button class="frm-btn-response" id="btn-style-purple" data-bs-toggle="modal" data-bs-target="#exampleModal">Responder</button>
+                            <button class="frm-btn-response" id="btn-style-red" (click)="eliminar(registro)" >Eliminar</button>
+                        </div>
+                        <hr>
+            <div class="frm-tbl-rsp">
+                <p>
+                    Ejemplos
+                </p>
+                <p><b>Respondido por: NaNKo</b></p>
+                <button class="frm-btn-response" id="btn-style-red">Eliminar</button>
+            </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<!-- Inicio Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar información</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <label class="modaltext">¿Que programa desea agregar?</label>
+        <div class="modal-body">
+          <form>
+            <label><b>Asunto: </b></label><br>  
+            <input type="text" [(ngModel)]="form.title" name="title"><br>
+            <label><b>Usuario: </b></label><br>  
+            <input type="text" [(ngModel)]="form.usuario" name="nombre"><br>
+            <label><b>Descripción: </b></label><br>
+            <textarea [(ngModel)]="form.desc" name="descripcion" maxlength="300"></textarea><br>
+              <hr>
+                <p id="c-text">¡Verifica que la información sea correcta!</p>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="btn-style-purple" (click)="create()" data-bs-dismiss="modal">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Final Modal -->
