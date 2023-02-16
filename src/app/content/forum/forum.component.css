@@ -12,10 +12,11 @@
     margin-top: 15px;
     margin-left: 15px;
     margin-bottom: 15px;
+    margin-right: 15px;
     padding: 10px;
     border-radius: 15px;
     background-color: White;
-    width: 98.5%;
+    
     height: auto;
 }
 
@@ -23,6 +24,9 @@
     margin-right: 10px;
 }
 
+.frm-tbl-rsp{
+    margin-left: 100px;
+}
 /* -- BUTTON STYLES --- */
 #btn-style-purple{
     padding: 5px;
