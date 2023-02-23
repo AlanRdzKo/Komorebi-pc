@@ -27,6 +27,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { CrudService } from './services/crud.service';
 import { ProgToolsComponent } from './content/prog-tools/prog-tools.component';
 import { ForumComponent } from './content/forum/forum.component';
+import { CargascriptsService } from './cargascripts.service';
+import { ImportComponent } from './import/import.component';
 
 const appRoutes: Routes =[
   {path:'', component: HomeComponent},
@@ -39,7 +41,8 @@ const appRoutes: Routes =[
   {path: 'register', component: RegisterComponent},
   {path: 'practica', component: PracticaComponent},
   {path: 'prog-tools', component: ProgToolsComponent},
-  {path: 'forum', component: ForumComponent}
+  {path: 'forum', component: ForumComponent},
+  {path: 'import',component: ImportComponent}
 ]
 
 @NgModule({
@@ -58,7 +61,8 @@ const appRoutes: Routes =[
     RegisterComponent,
     PracticaComponent,
     ProgToolsComponent,
-    ForumComponent
+    ForumComponent,
+    ImportComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,8 @@ const appRoutes: Routes =[
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
-    CrudService
+    CrudService,
+    CargascriptsService
   ],
   bootstrap: [AppComponent]
 })
