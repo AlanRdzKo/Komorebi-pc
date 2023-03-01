@@ -1,32 +1,21 @@
 <div class="main">
     <div id="frm-add-topic">
-        <button class="frm-btn-response" id="btn-style-purple" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="agregar()" (click)="agregar()">Responder</button>
+        <button class="frm-btn-response" id="btn-style-purple" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="agregar()" (click)="agregar()">Crear publicación</button>
     </div>
     <div class="dm-tbl" *ngFor="let registro of registros">
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <h4 class="accordion-header" id="headingOne">{{registro.title}}</h4>
-                </button>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <p>{{registro.desc}}</p>
-                        <div class="dm-tbl-btns">
-                            <button class="frm-btn-response" id="btn-style-purple" data-bs-toggle="modal" data-bs-target="#exampleModal">Responder</button>
-                            <button class="frm-btn-response" id="btn-style-red" (click)="eliminar(registro)" >Eliminar</button>
-                        </div>
-                        <hr>
-            <div class="frm-tbl-rsp">
-                <p>
-                    Ejemplos
-                </p>
-                <p><b>Respondido por: NaNKo</b></p>
-                <button class="frm-btn-response" id="btn-style-red">Eliminar</button>
-            </div>
-                    </div>
-                </div>
-            </div>
+      <div id="post-title">
+        <h4>{{registro.title}}</h4>
+        <h6><b>Usuario: {{registro.usuario}}</b> | ID: {{registro.id}}</h6>
+      </div>
+      <div id="post-body-main">
+        <div id="post-body-secondary">
+          <p>{{registro.desc}}</p>
+          <div class="dm-tbl-btns">
+            <button id="btn-style-purple">Responder</button>
+            <button id="btn-style-red" (click)="eliminar(registro)">Eliminar</button>
+          </div>
         </div>
+      </div>
     </div>
 </div>
 <!-- Inicio Modal -->

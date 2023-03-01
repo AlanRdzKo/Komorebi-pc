@@ -63,6 +63,28 @@ export class CrudService {
     return promise
   }
 
+  read1(coleccion:any){
+    var promise = new Promise((resolve)=>{
+      this.registros = [];
+      this.registros=this.database.collection(coleccion).doc("Pq677ypVl2NENlJPblET").collection("responses").valueChanges().subscribe(response=>{
+        resolve(response)
+        console.log(response)
+      });
+    })
+    return promise
+  }
+
+  // readsubcol(coleccion:any, subcolname:string){
+  //   var promise = new Promise((resolve)=>{
+  //     this.registros = [];
+  //     this.registros=this.database.collection(coleccion+"/"+this.registros.id+"/"+subcolname).valueChanges().subscribe(response=>{
+  //       resolve(response)
+  //       console.log(response)
+  //     });
+  //   })
+  //   return promise
+  // }
+
   update(coleccion:any, registro:any){
     let promesa = new Promise((resolve, reject)=>{
       this.database.collection(coleccion).doc(registro.id).set(registro).then(resp=>{

@@ -19,12 +19,55 @@
     height: auto;
 }
 
-.dm-tbl-btns button{
+.dm-tbl-btns > button{
     margin-right: 10px;
+    margin-bottom: 15px;
 }
 
 .frm-tbl-rsp{
     margin-left: 100px;
+}
+
+#post-title{
+    padding-top: 15px;
+    padding-bottom: 14px;
+    font-weight: bold;
+    color: white;
+    border-style: solid;
+    border-color: rgb(108, 0, 250);
+    background-color: rgb(108, 0, 250);
+    border-width: 2px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+}
+
+#post-title > h4{
+    margin-left: 15px;
+    float: left;
+}
+
+#post-title > h6{
+    color: rgb(239, 239, 239);
+    margin-top: 5px;
+    margin-right: 15px;
+    text-align: right;
+    text-decoration: underline;
+}
+
+#post-body-main{
+    padding-top: 15px;
+    border-style: solid;
+    border-top: 0px;
+    border-color: #EDEDED;
+}
+
+#post-body-secondary{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#post-body-secondary > p{
+    font-size: 16.5px;
 }
 /* -- BUTTON STYLES --- */
 

@@ -24,7 +24,10 @@ export class ForumComponent implements OnInit {
     this.coleccion = 'Forum'
     this.crud.read(this.coleccion).then((response: any)=>{
       this.registros = response;
-      console.log(this.registros)
+      // console.log(this.registros)
+    });
+    this.crud.read1(this.coleccion).then((response: any)=>{
+      this.registros = response;
     });
   }
 
