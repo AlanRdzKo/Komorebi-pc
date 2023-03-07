@@ -15,6 +15,8 @@ export class ForumComponent implements OnInit {
   }
   coleccion: string
   registros: any
+  responses: any
+  
 
   constructor(private crud: CrudService) { 
     this.coleccion = ""
@@ -24,11 +26,14 @@ export class ForumComponent implements OnInit {
     this.coleccion = 'Forum'
     this.crud.read(this.coleccion).then((response: any)=>{
       this.registros = response;
-      // console.log(this.registros)
+      for (let i = 0; i < this.registros.length; i++) { // Read subcollections for
+        this.crud.readsubcols(this.coleccion, this.registros[i].id).then((response: any)=>{
+          this.responses = response;
+          console.log(this.responses)
+        });
+      }
     });
-    this.crud.read1(this.coleccion).then((response: any)=>{
-      this.registros = response;
-    });
+
   }
 
   agregar(): void{

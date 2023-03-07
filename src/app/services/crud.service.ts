@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/compat/firestore';
 import {AngularFireStorage} from '@angular/fire/compat/storage';
+import { AnyForUntypedForms } from '@angular/forms';
 import {concatAll, finalize} from 'rxjs/operators';
 
 @Injectable({
@@ -10,6 +11,7 @@ export class CrudService {
 
   url:any
   registros:any
+  responses:any
 
   constructor(private database: AngularFirestore, private storage: AngularFireStorage) { }
 
@@ -63,27 +65,15 @@ export class CrudService {
     return promise
   }
 
-  read1(coleccion:any){
+  readsubcols(coleccion:any, document:any){
     var promise = new Promise((resolve)=>{
-      this.registros = [];
-      this.registros=this.database.collection(coleccion).doc("Pq677ypVl2NENlJPblET").collection("responses").valueChanges().subscribe(response=>{
+      this.responses = [];
+      this.responses=this.database.collection(coleccion).doc(document).collection("responses").valueChanges().subscribe(response=>{
         resolve(response)
-        console.log(response)
       });
     })
     return promise
   }
-
-  // readsubcol(coleccion:any, subcolname:string){
-  //   var promise = new Promise((resolve)=>{
-  //     this.registros = [];
-  //     this.registros=this.database.collection(coleccion+"/"+this.registros.id+"/"+subcolname).valueChanges().subscribe(response=>{
-  //       resolve(response)
-  //       console.log(response)
-  //     });
-  //   })
-  //   return promise
-  // }
 
   update(coleccion:any, registro:any){
     let promesa = new Promise((resolve, reject)=>{
