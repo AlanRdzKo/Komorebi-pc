@@ -29,6 +29,7 @@ import { ProgToolsComponent } from './content/prog-tools/prog-tools.component';
 import { ForumComponent } from './content/forum/forum.component';
 import { CargascriptsService } from './cargascripts.service';
 import { ImportComponent } from './import/import.component';
+import { NewsComponent } from './content/news/news.component';
 
 const appRoutes: Routes =[
   {path:'', component: HomeComponent},
@@ -42,7 +43,8 @@ const appRoutes: Routes =[
   {path: 'practica', component: PracticaComponent},
   {path: 'prog-tools', component: ProgToolsComponent},
   {path: 'forum', component: ForumComponent},
-  {path: 'import',component: ImportComponent}
+  {path: 'import',component: ImportComponent},
+  {path: 'news',component:NewsComponent}
 ]
 
 @NgModule({
@@ -62,7 +64,8 @@ const appRoutes: Routes =[
     PracticaComponent,
     ProgToolsComponent,
     ForumComponent,
-    ImportComponent
+    ImportComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
