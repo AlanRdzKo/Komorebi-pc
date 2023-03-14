@@ -13,8 +13,10 @@ export class NewsComponent implements OnInit {
     description: "",
   }
 
+  url: string
   constructor(private crud: CrudService) { 
     this.coleccion = ""
+    this.url = ""
   }
 
   ngOnInit(): void {
@@ -27,12 +29,12 @@ export class NewsComponent implements OnInit {
   coleccion: string
   registros: any
 
-
   agregar(): void{
     this.form={
       title:"",
       description: "",
     }
+    this.url = ""
   }
 
   create(): void
@@ -66,4 +68,10 @@ export class NewsComponent implements OnInit {
       })
     }
   }
+
+  PicStorage(event: any)
+  {
+    this.crud.upload(this.coleccion, event)
+  }
+
 }

@@ -24,6 +24,10 @@
     height: auto;
 }
 
+#nw-img{
+    text-align: center;
+    margin-bottom: 15px;
+}
 /* -- BUTTON STYLES --- */
 
 .option-btns > #btn-style-red {
