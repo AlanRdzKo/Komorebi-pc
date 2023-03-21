@@ -4,14 +4,14 @@
         <h2>Panel de registro</h2>
         <hr>
         <h3>Usuario</h3>
-        <input class="controls" type="text" name="user" value="" placeholder="Usuario">
+        <input class="controls" type="text" name="user" value="" placeholder="Usuario" [(ngModel)]="form.usuario">
         <h3>Correo</h3>
-        <input class="controls" type="password" name="password" value="" placeholder="Correo"><br>
+        <input class="controls" type="text" name="password" value="" placeholder="Correo" [(ngModel)]="form.correo"><br>
         <h3>Contraseña</h3>
-        <input class="controls" type="password" name="password" value="" placeholder="Contraseña"><br>
+        <input class="controls" type="password" name="password" value="" placeholder="Contraseña" [(ngModel)]="form.contrasena"><br>
         <h3>Confirmar contraseña</h3>
-        <input class="controls" type="password" name="password" value="" placeholder="Confirme contraseña"><br>
-        <input class="button" type="button" name="" value="Registrar"><br>
+        <input class="controls" type="password" name="password" value="" placeholder="Confirme contraseña" [(ngModel)]="ccontrasena"><br>
+        <input class="button" type="button" name="" value="Registrar" (click)="registrarme()"><br>
         <hr>
         <div id="info-text">
             <p>Recomendamos utilizar Opera GX y una resolución minima de 1024 x 768.</p>

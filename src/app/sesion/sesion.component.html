@@ -4,10 +4,10 @@
         <h2>Panel de inicio sesión</h2>
         <hr>
         <h3>Usuario</h3>
-        <input class="controls" type="password" name="user" value="" placeholder="User">
+        <input class="controls" type="text" name="user" value="" placeholder="correo" [(ngModel)]="form.correo">
         <h3>Contraseña</h3>
-        <input class="controls" type="" name="password" value="" placeholder="Password"><br>
-        <input class="button" type="submit" name="" value="Access"><br>
+        <input class="controls" type="password" name="password" value="" placeholder="contrasena" [(ngModel)]="form.contrasena"><br>
+        <input class="button" type="submit" name="" value="Access" (click)="IniciarSesion()" ><br>
         <a [routerLink]="['../register']"><p>¿No tienes cuenta? Crea una gratis.</p></a>
         <hr>
         <div id="info-text">
