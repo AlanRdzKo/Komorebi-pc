@@ -5,8 +5,12 @@
                 <a href="https://www.facebook.com/KomorebiPC" [routerLink]="['home']"><img class="KomorebiPic"  src="https://i.ibb.co/RbDFX4B/Profile-Photo.png"></a>
             </td>
             <td class="derecha">
-                    <a [routerLink]="['sesion']" class="LoginText"><i class="fas fa-user-circle"></i>Iniciar Sesion</a>
-                    <a [routerLink]="['']" (click)="cerrarSesion()"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesion</a>
+                    <a [routerLink]="['sesion']" class="LoginText">
+                        <i class="fas fa-user-circle" *ngIf="usuario_activo==false">Iniciar Sesion</i>
+                    </a>
+                    <a [routerLink]="['home']" class="LoginText" (click)="cerrarSesion()">
+                        <i class="fa-solid fa-right-from-bracket" *ngIf="usuario_activo==true">Cerrar Sesion</i>
+                    </a>
             </td>
         </tr>
     </table>

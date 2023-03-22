@@ -17,7 +17,7 @@ table{
     margin-right: 40px;
     margin-top: 5px;
     float: right;
-    width: 200px;
+    width: 300px;
     text-align: right;
 }
 
@@ -38,17 +38,17 @@ table{
 
 .LoginText{
     font-family: 'Raleway', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
     text-decoration:none;
     transition: 0.3s;
     margin-right: 10px;
 }
 
-.LoginText i{
+   .LoginText i{
     margin-top: 40px;
     margin-right: 10px;
-}
+} 
 .header-icon-fab{
     font-size: 20px;
     color: white;

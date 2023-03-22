@@ -8,10 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private auth: AngularFireAuth, private router:Router) { }
+  
+  usuario_activo: boolean | undefined;
+  constructor(private auth: AngularFireAuth, private router:Router) {
+  }
 
   ngOnInit(): void {
+    this.auth.authState.subscribe(user => {
+      if (user){
+        this.usuario_activo = true
+      }
+      else{
+        this.usuario_activo = false
+      }
+    })
   }
 
   cerrarSesion(){
@@ -24,7 +34,7 @@ export class HeaderComponent implements OnInit {
         })
       }
       else{
-        this.router.navigate(['/inicio'])
+        this.router.navigate(['/home'])
       }
     })
   }
