@@ -30,6 +30,7 @@ import { ForumComponent } from './content/forum/forum.component';
 import { CargascriptsService } from './cargascripts.service';
 import { ImportComponent } from './import/import.component';
 import { NewsComponent } from './content/news/news.component';
+import { ProgramComponent } from './content/program/program.component';
 
 const appRoutes: Routes =[
   {path:'', component: HomeComponent},
@@ -65,7 +66,8 @@ const appRoutes: Routes =[
     ProgToolsComponent,
     ForumComponent,
     ImportComponent,
-    NewsComponent
+    NewsComponent,
+    ProgramComponent
   ],
   imports: [
     BrowserModule,
